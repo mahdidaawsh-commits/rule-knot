@@ -138,4 +138,5 @@ async function rpc(method, params) {
   if(start<0 || codeOutput.slice(start,start+source.length)!==source.toString()) throw Error('Deployed source mismatch');
   save('deployment',{network:'studionet',chain_id:61999,contract_address:contract,source_sha256:sourceHash,exact_source_match:true,fixture_revision:revision,sources,transactions});
   console.log('SOURCE VERIFIED',contract);
+  cp.execFileSync(process.execPath,[path.join(__dirname,'verify-proofs.cjs')],{cwd:root,stdio:'inherit'});
 })().catch(error=>{console.error(error.message);process.exitCode=1});
