@@ -1,0 +1,181 @@
+{
+  "hash": "0x42fd95b703ccca0dc0776aa2b037d5407d74df17ef1aa18f407c0419000295e1",
+  "from_address": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "to_address": "0x84E91785E324f8F48902dD1043622C65d861aC26",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/conflict.md\",\"b7f70d533b2350d376b4370dab0e430f29d3affa5053ed15c96650a8a4c4fb89\",]\"method\":\"inspect\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11": "agree",
+      "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb": "disagree",
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71": "agree",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC": "disagree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/conflict.md\",\"b7f70d533b2350d376b4370dab0e430f29d3affa5053ed15c96650a8a4c4fb89\",]\"method\":\"inspect\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "return",
+            "payload": {
+              "readable": "{\"tables\":[{\"id\":\"signoff\"\"quote\":\"Every release must include human sign-off.\"\"verdicts\":[\"DENY\",\"DENY\",\"ALLOW\",\"ALLOW\",\"DENY\",\"DENY\",\"ALLOW\",\"ALLOW\",]},{\"id\":\"fast-no-signoff\"\"quote\":\"If a release uses an expedited schedule, it must omit human sign-off.\"\"verdicts\":[\"ALLOW\",\"ALLOW\",\"ALLOW\",\"DENY\",\"ALLOW\",\"ALLOW\",\"ALLOW\",\"DENY\",]},{\"id\":\"expedite\"\"quote\":\"Every release must use an expedited schedule.\"\"verdicts\":[\"DENY\",\"ALLOW\",\"DENY\",\"ALLOW\",\"DENY\",\"ALLOW\",\"DENY\",\"ALLOW\",]},{\"id\":\"recovery\"\"quote\":\"Every release must support offline recovery.\"\"verdicts\":[\"DENY\",\"DENY\",\"DENY\",\"DENY\",\"ALLOW\",\"ALLOW\",\"ALLOW\",\"ALLOW\",]},]}"
+            }
+          }
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/conflict.md\",\"b7f70d533b2350d376b4370dab0e430f29d3affa5053ed15c96650a8a4c4fb89\",]\"method\":\"inspect\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree"
+      }
+    ]
+  },
+  "gaslimit": 2,
+  "nonce": 2,
+  "created_at": "2026-10-05T12:48:12.921400+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9020902808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901a427241a990000000000000000000000005f7caf6312c18666e5440cc7d002eab53c6897ab00000000000000000000000084e91785e324f8f48902dd1043622c65d861ac260000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000dbf8d9b8d616046172677315e40768747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6d616864696461617773682d636f6d6d6974732f72756c652d6b6e6f742f363734616532636337363863303039623436623839373439346531346665383335396332313837352f7265636f7264732f636f6e666c6963742e6d64840462376637306435333362323335306433373662343337306461623065343330663239643361666661353035336564313563393636353061386134633466623839066d6574686f643c696e73706563740000000000008301e482a020bb5f76e6f8b5ea6b7b0c025550ca6f18d5bb58282d16f0a114a5e71f4f4a09a0557073cdb08c01572a06fd84bba29f0b4f85bca60b65573ebd1b84a5cd0e87cf"
+  },
+  "value_credited": false,
+  "sender": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "recipient": "0x84E91785E324f8F48902dD1043622C65d861aC26",
+  "tx_id": "0x42fd95b703ccca0dc0776aa2b037d5407d74df17ef1aa18f407c0419000295e1",
+  "activator": "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658",
+  "last_leader": "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "3",
+  "last_round": {
+    "round": "2",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "1",
+    "result": 6,
+    "round_validators": [
+      "0x03D58A4DeF6fDFc032A56374785a5F571D07Bc11",
+      "0x14402D49f317CE1a2F35BAE01b1804A2A9703dCb",
+      "0x4404Fb70d490c935758146f42A73DC850FF95C71",
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+      "0xE6BD8050758CB15fC88387223E31Ae2708B119dC"
+    ],
+    "validator_votes_hash": [
+      "0xafa554f32f5f5282cb18e5fb0ba9811849e3a0bbb5cbf26c8e5912c1e3528263",
+      "0x8541b751c92caaf198ebefa3f7f7aef366a9f44cf3ae3e53f63cdd7ecdf1c2eb",
+      "0xb06ef91bedf8538682d095e269d559a6ce5f30a918df10f6192863caaa9872c4",
+      "0xdc59c1a3d2507b38b41d3ad10a9ff382481bab48c93e97e264c30f455175397c",
+      "0xca8171d1c29685d2341258b702df4d505386bea872ac14869cbe82fb71ea934c"
+    ],
+    "validator_votes": [
+      1,
+      2,
+      1,
+      1,
+      2
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "DISAGREE",
+      "AGREE",
+      "AGREE",
+      "DISAGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

@@ -1,0 +1,181 @@
+{
+  "hash": "0x33e36dc41c500ea1f3788f44d42f7a405276888bc6fdb191043506dde8d5fb60",
+  "from_address": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "to_address": "0x84E91785E324f8F48902dD1043622C65d861aC26",
+  "data": {
+    "calldata": {
+      "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/feasible.md\",\"d115a38e3dd3b39bad31cc04c5f7312dba3d3ee25dc0085d30dc1adb789a376c\",]\"method\":\"inspect\"}"
+    }
+  },
+  "status": 7,
+  "result": 6,
+  "consensus_data": {
+    "votes": {
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557": "agree",
+      "0x3E5ee2507cc167C9925Bf10c67D7986581112024": "agree",
+      "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3": "agree",
+      "0x76c25AFC12c75485703cCFfd0083AA6201455B25": "disagree",
+      "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658": "disagree"
+    },
+    "leader_receipt": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "leader",
+        "vote": null,
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/feasible.md\",\"d115a38e3dd3b39bad31cc04c5f7312dba3d3ee25dc0085d30dc1adb789a376c\",]\"method\":\"inspect\"}"
+        },
+        "eq_outputs": {
+          "0": {
+            "status": "return",
+            "payload": {
+              "readable": "{\"tables\":[{\"id\":\"signoff\"\"quote\":\"Every release must include human sign-off.\"\"verdicts\":[\"DENY\",\"DENY\",\"ALLOW\",\"ALLOW\",\"DENY\",\"DENY\",\"ALLOW\",\"ALLOW\",]},{\"id\":\"fast-recovery\"\"quote\":\"If a release uses an expedited schedule, it must support offline recovery.\"\"verdicts\":[\"ALLOW\",\"DENY\",\"ALLOW\",\"DENY\",\"ALLOW\",\"ALLOW\",\"ALLOW\",\"ALLOW\",]},{\"id\":\"ordinary-recovery\"\"quote\":\"If a release does not use an expedited schedule, it must still support offline recovery.\"\"verdicts\":[\"DENY\",\"ALLOW\",\"DENY\",\"ALLOW\",\"ALLOW\",\"ALLOW\",\"ALLOW\",\"ALLOW\",]},]}"
+            }
+          }
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree",
+        "calldata": {
+          "readable": "{\"args\":[\"https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/feasible.md\",\"d115a38e3dd3b39bad31cc04c5f7312dba3d3ee25dc0085d30dc1adb789a376c\",]\"method\":\"inspect\"}"
+        },
+        "result": {
+          "status": "return",
+          "payload": {
+            "readable": "null"
+          }
+        }
+      }
+    ],
+    "validators": [
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "disagree"
+      },
+      {
+        "execution_result": "SUCCESS",
+        "genvm_result": {
+          "stderr": "",
+          "stdout": "",
+          "raw_error": null,
+          "error_code": null,
+          "error_description": null
+        },
+        "mode": "validator",
+        "vote": "agree"
+      }
+    ]
+  },
+  "gaslimit": 1,
+  "nonce": 1,
+  "created_at": "2026-10-05T12:46:54.715159+00:00",
+  "leader_only": false,
+  "execution_mode": "NORMAL",
+  "origin_address": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "triggered_on": null,
+  "appeal_validators_timeout": false,
+  "sim_config": {
+    "signed_rollup_transaction": "0xf9020901808307a12094b7278a61aa25c888815afc32ad3cc52ff24fe57580b901a427241a990000000000000000000000005f7caf6312c18666e5440cc7d002eab53c6897ab00000000000000000000000084e91785e324f8f48902dd1043622c65d861ac260000000000000000000000000000000000000000000000000000000000000005000000000000000000000000000000000000000000000000000000000000000300000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000000000000000dbf8d9b8d616046172677315e40768747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6d616864696461617773682d636f6d6d6974732f72756c652d6b6e6f742f363734616532636337363863303039623436623839373439346531346665383335396332313837352f7265636f7264732f6665617369626c652e6d64840464313135613338653364643362333962616433316363303463356637333132646261336433656532356463303038356433306463316164623738396133373663066d6574686f643c696e73706563740000000000008301e482a0353dd1c7daf60b7129f588a555ec36fd761767ebfdec137c5518c68e819edb4fa05dade2038e719da4302833538da1b00100f2ea70691a36d7e89ba1421c250647"
+  },
+  "value_credited": false,
+  "sender": "0x5f7caf6312C18666e5440Cc7d002EAB53C6897Ab",
+  "recipient": "0x84E91785E324f8F48902dD1043622C65d861aC26",
+  "tx_id": "0x33e36dc41c500ea1f3788f44d42f7a405276888bc6fdb191043506dde8d5fb60",
+  "activator": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+  "last_leader": "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+  "result_name": "MAJORITY_AGREE",
+  "num_of_rounds": "1",
+  "last_round": {
+    "round": "0",
+    "leader_index": "0",
+    "votes_committed": "5",
+    "votes_revealed": "5",
+    "appeal_bond": "0",
+    "rotations_left": "3",
+    "result": 6,
+    "round_validators": [
+      "0x6737ca1d6BDF8b7C4f19143E2D55581Ca64eb7C3",
+      "0x36728d2a123aB444E603EE5b2ad17d18Bb193557",
+      "0x76c25AFC12c75485703cCFfd0083AA6201455B25",
+      "0xec2Fb79cd12255Eb34886CEd7332f27B98DEe658",
+      "0x3E5ee2507cc167C9925Bf10c67D7986581112024"
+    ],
+    "validator_votes_hash": [
+      "0x325fbbead9c4ecd3b1fd4cd1122207cddfb1ce838130b23f449b62a246c72429",
+      "0x939371ad0474c7599394e8a80065fdd9bf62df593b3f6cbd166cb85a0178b32b",
+      "0x9d755f47799e557fd931426a293eaf487a89ec24b704c8730c54c1668f69b9a0",
+      "0x89ecd19c2929246ee889df7d16d325003eff355345afa61b5725f5b98fc02796",
+      "0xb4da1b4e9bbd879d3e8d6e8ac9fbfd01d7ac8afe070e1a21abcaa05755bc9b28"
+    ],
+    "validator_votes": [
+      1,
+      1,
+      2,
+      2,
+      1
+    ],
+    "validator_votes_name": [
+      "AGREE",
+      "AGREE",
+      "DISAGREE",
+      "DISAGREE",
+      "AGREE"
+    ]
+  },
+  "type": 2,
+  "status_name": "FINALIZED"
+}

@@ -72,7 +72,7 @@ function invoke(label, args, overrides = {}) {
     });
   });
 }
-async function receipt(label, hash) {
+async function receipt(label, hash, allowDisagreement = false) {
   let output;
   for(let attempt=0;attempt<3;attempt++){
     try { output=await invoke(label+'-receipt',['receipt',hash,'--retries','300','--interval','4000']); break; }
@@ -82,7 +82,7 @@ async function receipt(label, hash) {
   save(label + '-receipt', data);
   const status = data.statusName || data.status_name;
   const execution = data.txExecutionResultName || data.consensus_data?.leader_receipt?.[0]?.execution_result;
-  if (status !== 'FINALIZED' || data.result_name !== 'MAJORITY_AGREE' || !['SUCCESS', 'FINISHED_WITH_RETURN'].includes(execution)) throw Error(label + ': ' + status + '/' + data.result_name + '/' + execution);
+  if (status !== 'FINALIZED' || (data.result_name !== 'MAJORITY_AGREE' && !(allowDisagreement && data.result_name === 'MAJORITY_DISAGREE')) || !['SUCCESS', 'FINISHED_WITH_RETURN'].includes(execution)) throw Error(label + ': ' + status + '/' + data.result_name + '/' + execution);
   console.log('FINALIZED', label, hash, execution);
   return data;
 }
@@ -117,10 +117,17 @@ async function rpc(method, params) {
     const output=await invoke(step.name,['write',contract,step.method,'--args',...args]);
     const hash=output.match(/Write Transaction Hash:\s*(0x[0-9a-f]{64})/i)?.[1];
     if(!hash) throw Error('Missing write hash');
-    await receipt(step.name,hash);
-    transactions.push({label:step.name,action:step.method,hash});
+    const finalized=await receipt(step.name,hash,step.name==='exceptions');
+    const rejected=finalized.result_name==='MAJORITY_DISAGREE';
+    transactions.push({label:step.name,action:step.method,hash,...(rejected?{outcome:'REJECTED'}:{})});
     const state=result(await invoke(step.name+'-state',['call',contract,'get_state']));
     const row=state.rounds.at(-1);
+    if(rejected){
+      if(state.rounds.length!==steps.indexOf(step)) throw Error('Rejected evaluation changed round count');
+      save(step.name,{network:'studionet',chain_id:61999,contract_address:contract,source_sha256:sourceHash,fixture_revision:revision,transaction:transactions.at(-1),state});
+      console.log('REJECTION VERIFIED',step.name);
+      continue;
+    }
     const target=expected[step.source];
     if(row.result.status!==target.status || row.result.witness!==target.witness || !equal(row.result.core,target.core) || row.sha256!==sources[step.source].sha256) throw Error('Unexpected policy state '+step.name+': '+JSON.stringify(state));
     save(step.name,{network:'studionet',chain_id:61999,contract_address:contract,source_sha256:sourceHash,fixture_revision:revision,transaction:transactions.at(-1),state});

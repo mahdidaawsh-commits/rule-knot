@@ -1,0 +1,243 @@
+{
+  "network": "studionet",
+  "chain_id": 61999,
+  "contract_address": "0x84E91785E324f8F48902dD1043622C65d861aC26",
+  "source_sha256": "b889a28ce402e68840353d0fa8695165a7f206fecbe0c210992e08609a926d14",
+  "fixture_revision": "674ae2cc768c009b46b897494e14fe8359c21875",
+  "transaction": {
+    "label": "exceptions",
+    "action": "inspect",
+    "hash": "0x1b97aab47ba9424fb61113a6add616d4588928e8e416c47396f1de51d7fd3fcc",
+    "outcome": "REJECTED"
+  },
+  "state": {
+    "policy": {
+      "features": [
+        {
+          "id": "fast",
+          "meaning": "The release uses an expedited schedule."
+        },
+        {
+          "id": "manual",
+          "meaning": "The release includes human sign-off."
+        },
+        {
+          "id": "offline",
+          "meaning": "The release supports offline recovery."
+        }
+      ],
+      "source_repository": "mahdidaawsh-commits/rule-knot"
+    },
+    "rounds": [
+      {
+        "report": {
+          "tables": [
+            {
+              "id": "signoff",
+              "quote": "Every release must include human sign-off.",
+              "verdicts": [
+                "DENY",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "DENY",
+                "DENY",
+                "ALLOW",
+                "ALLOW"
+              ]
+            },
+            {
+              "id": "fast-recovery",
+              "quote": "If a release uses an expedited schedule, it must support offline recovery.",
+              "verdicts": [
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW"
+              ]
+            },
+            {
+              "id": "ordinary-recovery",
+              "quote": "If a release does not use an expedited schedule, it must still support offline recovery.",
+              "verdicts": [
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW"
+              ]
+            }
+          ]
+        },
+        "result": {
+          "certain_masks": [
+            6,
+            7
+          ],
+          "core": [],
+          "possible_masks": [
+            6,
+            7
+          ],
+          "possible_witness": 6,
+          "removal_witnesses": [],
+          "status": "READY",
+          "witness": 6
+        },
+        "sha256": "d115a38e3dd3b39bad31cc04c5f7312dba3d3ee25dc0085d30dc1adb789a376c",
+        "url": "https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/feasible.md"
+      },
+      {
+        "report": {
+          "tables": [
+            {
+              "id": "signoff",
+              "quote": "Every release must include human sign-off.",
+              "verdicts": [
+                "DENY",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "DENY",
+                "DENY",
+                "ALLOW",
+                "ALLOW"
+              ]
+            },
+            {
+              "id": "fast-no-signoff",
+              "quote": "If a release uses an expedited schedule, it must omit human sign-off.",
+              "verdicts": [
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "DENY"
+              ]
+            },
+            {
+              "id": "expedite",
+              "quote": "Every release must use an expedited schedule.",
+              "verdicts": [
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW"
+              ]
+            },
+            {
+              "id": "recovery",
+              "quote": "Every release must support offline recovery.",
+              "verdicts": [
+                "DENY",
+                "DENY",
+                "DENY",
+                "DENY",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW",
+                "ALLOW"
+              ]
+            }
+          ]
+        },
+        "result": {
+          "certain_masks": [],
+          "core": [
+            "signoff",
+            "fast-no-signoff",
+            "expedite"
+          ],
+          "possible_masks": [],
+          "possible_witness": null,
+          "removal_witnesses": [
+            {
+              "certain": true,
+              "mask": 1,
+              "removed": "signoff"
+            },
+            {
+              "certain": true,
+              "mask": 3,
+              "removed": "fast-no-signoff"
+            },
+            {
+              "certain": true,
+              "mask": 2,
+              "removed": "expedite"
+            }
+          ],
+          "status": "CONFLICT",
+          "witness": null
+        },
+        "sha256": "b7f70d533b2350d376b4370dab0e430f29d3affa5053ed15c96650a8a4c4fb89",
+        "url": "https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/conflict.md"
+      },
+      {
+        "report": {
+          "tables": [
+            {
+              "id": "urgency",
+              "quote": "If the coordinator considers a release urgent, it must use an expedited schedule. Urgency and the coordinator's judgment are not defined or supplied in this record.",
+              "verdicts": [
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN",
+                "UNKNOWN"
+              ]
+            },
+            {
+              "id": "no-expedite",
+              "quote": "No release may use an expedited schedule.",
+              "verdicts": [
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY",
+                "ALLOW",
+                "DENY"
+              ]
+            }
+          ]
+        },
+        "result": {
+          "certain_masks": [],
+          "core": [],
+          "possible_masks": [
+            0,
+            2,
+            4,
+            6
+          ],
+          "possible_witness": 0,
+          "removal_witnesses": [],
+          "status": "REVIEW",
+          "witness": null
+        },
+        "sha256": "c61f8ad0a0c8589e09d771954488c05284cd4a9a07e1b02fe3864cf645fed516",
+        "url": "https://raw.githubusercontent.com/mahdidaawsh-commits/rule-knot/674ae2cc768c009b46b897494e14fe8359c21875/records/review.md"
+      }
+    ]
+  },
+  "read_only_recovery": true
+}

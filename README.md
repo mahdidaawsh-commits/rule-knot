@@ -41,11 +41,11 @@ pytest tests/direct -q
 node scripts/verify-proofs.cjs
 ```
 
-The proof workflow creates an ephemeral CLI account and deploys to gasless StudioNet (chain 61999). It submits four records, waits for successful finalized consensus receipts, reads each stored result, and compares deployed source with local bytes. Signing material is excluded from artifacts. Receipt retries are read-only; submitted hashes are journaled to prevent blind resubmission.
+The proof workflow creates an ephemeral CLI account and deploys to gasless StudioNet (chain 61999). It submits four records, verifies finalized receipts, reads stored results, and compares deployed source with local bytes. The exception stress case may be rejected by semantic validators; that outcome is retained and requires unchanged state, rather than being counted as an accepted result. Signing material is excluded from artifacts. Receipt retries are read-only; submitted hashes are journaled to prevent blind resubmission.
 
 ## Boundaries
 
-The publisher supplies normative policy text; fetching proves byte binding, not the authority or correctness of the policy. Features model stated Boolean conditions rather than actual deployment events. Only valid `## clause-id` sections are enforceable clauses; preamble text is contextual data. Clauses are interpreted independently. Undefined external facts yield UNKNOWN. This is bounded policy feasibility, not proof of release execution, legal clearance, safety or universal satisfiability.
+The publisher supplies normative policy text; fetching proves byte binding, not the authority or correctness of the policy. Features model stated Boolean conditions rather than actual deployment events. Only valid `## clause-id` sections are enforceable clauses; preamble text is contextual data. Clauses are interpreted independently. Undefined external facts yield UNKNOWN. Live models conservatively marked every urgency verdict UNKNOWN, even where the expedited consequent was true. That can miss feasible configurations; the proof verifier explicitly permits this conservative case without allowing a false denial. This is bounded policy feasibility, not proof of release execution, legal clearance, safety or universal satisfiability.
 
 Limits: 1–4 features, 1–4 clauses, 16 configurations, 8,000 source bytes, and eight batches per deployment. Permissionless callers can exhaust the batch cap using distinct valid publisher records. A new instance is then required. Failed evaluations do not append a result. Semantic consensus can reject a run or agree on a mistaken interpretation; tests and fixtures do not remove that risk.
 
