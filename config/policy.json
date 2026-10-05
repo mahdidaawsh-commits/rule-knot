@@ -1,0 +1,1 @@
+{"source_repository":"mahdidaawsh-commits/rule-knot","features":[{"id":"fast","meaning":"The release uses an expedited schedule."},{"id":"manual","meaning":"The release includes human sign-off."},{"id":"offline","meaning":"The release supports offline recovery."}]}

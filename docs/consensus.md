@@ -1,0 +1,13 @@
+# Consensus and state
+
+`inspect(url, sha256)` validates the immutable publisher path, a full 40-hex commit, a basename under `records/`, and a 64-hex digest. It rejects duplicate digests and calls beyond the eight-batch limit. The leader fetches 1–8,000 bytes, checks HTTP success and SHA-256, decodes UTF-8, and extracts 1–4 unique named clauses.
+
+For n features, each clause has exactly 2^n ordered verdicts. Mask bit i represents feature i. False explicitly means that feature's stated meaning does not hold. A clause verdict must preserve implication, negation and exceptions without using another clause to supply missing facts. Quote anchors must occur within their own clause; an additional semantic check must find them sufficient to support the interpretation.
+
+Each validator independently repeats acquisition and extraction, constructs its own full table, and rejects any ALLOW/DENY/UNKNOWN cell mismatch. Different supporting quotes are allowed only when each remains source-bound and semantically sufficient. A second prompt sees complete source bytes decoded as text, the clause bodies, feature meanings, every configuration and the proposed table. Every clause must receive a Boolean true relevance/interpretation decision. Malformed outputs, source failures and validator exceptions reject consensus. No confidence tolerance can bridge a decision threshold.
+
+After consensus the deterministic solver enumerates configurations. Certain means every selected clause is ALLOW; possible means none is DENY. It searches clause subsets in increasing cardinality, with lexicographic source-index ties, for the first subset with no possible configuration. This guarantees minimum cardinality within this bounded agreed table, not merely deletion-minimality. Each member's removal has at least one possible configuration for the remaining core. A witness containing UNKNOWN is labeled `certain: false` and is not proof of actual feasibility.
+
+The append-only row stores URL, digest, source-linked tables, certain/possible masks, status, canonical witnesses, core IDs and removal witnesses. No caller can replace a prior row or change feature definitions. Each batch is an independent policy inspection, with no version-transition approval workflow.
+
+The contract accepts external text as policy data, never prompt instructions. Semantic correctness remains dependent on validator model judgment. A checksum binds bytes but does not attest to publisher authority. Commit pinning does not guarantee permanent availability. The synthetic records demonstrate consensus behavior, not real release outcomes.
